@@ -67,6 +67,18 @@ Metrics used:
 The **RoBERTa** model achieved the best overall balance across precision, recall, and F1-score, making it the chosen model for deployment.
 
 ---
+## Results
+#### Word Distribution
+![Word Distribution](images/word_dist.png)
+
+#### Confusion Matrix
+![Confusion Matrix](images/conf_matrix.png)
+
+#### ROC-AUC Curve
+![auc-roc](images/auc_roc.png)
+
+---
+
 
 ## Deployment Plan
 The system is deployed with:
