@@ -71,11 +71,18 @@ The **RoBERTa** model achieved the best overall balance across precision, recall
 #### Word Distribution
 ![Word Distribution](images/word_dist.png)
 
+ Words like kikuyus, luo, kalenjins, and kenya are dominant in all three categories, highlighting the focus on Kenyan ethnic groups and politics. Hate speech tweets prominently feature tribal identifiers and words associated with violence or negativity, such as kill and hate, indicating targeted hostility. Neutral tweets, in contrast, also center around ethnic groups but with additional election-related terms like morefromselections and election, suggesting a broader, less aggressive discourse. Offensive tweets show a mix of slurs, ethnic mentions, and aggression-related words, though with less concentration on elections compared to neutral tweets. Overall, these visualizations underline the central role of ethnicity and politics in shaping online discourse across all sentiments.
+
 #### Confusion Matrix
 ![Confusion Matrix](images/conf_matrix.png)
 
+The Transformer model shows better class-wise performance with higher true positives along the diagonal, indicating improved classification accuracy.
+
 #### ROC-AUC Curve
 ![auc-roc](images/auc_roc.png)
+
+- Overall, the Transformer shows stronger discrimination ability for Hate Speech and Neutral categories, indicating better overall classification performance in these classes.
+- The Logistic Regression model seems to handle the Offensive class more effectively than the Transformer.
 
 ---
 
@@ -91,6 +98,14 @@ The system is deployed with:
 2. App sends request to FastAPI endpoint.
 3. Model processes input and returns classification result.
 4. Streamlit displays predicted category.
+
+---
+## Recommendations
+
+- **Adopt the Transformer Model** – Given its superior performance across all metrics, the fine-tuned Transformer should be the primary model for deployment.
+- **Ensemble Strategies** – Investigate combining the Transformer with top-performing traditional models (e.g., Logistic Regression) to leverage complementary strengths.
+- **Periodic Retraining** – Regularly update the model with new data to adapt to evolving language patterns and slang in tweets.
+
 
 
 
