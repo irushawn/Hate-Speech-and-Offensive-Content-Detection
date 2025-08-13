@@ -73,6 +73,20 @@ The **RoBERTa** model achieved the best overall balance across precision, recall
 
  Words like kikuyus, luo, kalenjins, and kenya are dominant in all three categories, highlighting the focus on Kenyan ethnic groups and politics. Hate speech tweets prominently feature tribal identifiers and words associated with violence or negativity, such as kill and hate, indicating targeted hostility. Neutral tweets, in contrast, also center around ethnic groups but with additional election-related terms like morefromselections and election, suggesting a broader, less aggressive discourse. Offensive tweets show a mix of slurs, ethnic mentions, and aggression-related words, though with less concentration on elections compared to neutral tweets. Overall, these visualizations underline the central role of ethnicity and politics in shaping online discourse across all sentiments.
 
+ #### Model Comparison
+ | Model               | Accuracy | F1 Macro | F1 Weighted |
+|---------------------|----------|----------|-------------|
+| Transformer         | 0.63     | 0.63     | 0.63        |
+| Logistic Regression | 0.56     | 0.56     | 0.556       |
+| Random Forest       | 0.55     | 0.54     | 0.54        |
+| XGBoost             | 0.54     | 0.53     | 0.53        |
+| Naive Bayes         | 0.52     | 0.51     | 0.52        |
+
+From the results, **Logistic Regression** emerges as the strongest among the traditional models, outperforming Random Forest, XGBoost, and Naive Bayes in all metrics. However, the **fine-tuned Transformer** model achieves the highest overall performance, with consistent gains in accuracy, macro F1, and weighted F1, indicating better balance across classes and superior generalization.
+
+We will go ahead and compare Logistic regression and the Transformer model Further
+
+
 #### Confusion Matrix
 ![Confusion Matrix](images/conf_matrix.png)
 
